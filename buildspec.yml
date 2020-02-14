@@ -4,7 +4,7 @@ phases:
   install:
     runtime-versions:
       nodejs: 10
-      dotnet: 3.0
+      dotnet: 2.2
     commands:
       - yarn --version
       - yarn global add serverless
@@ -13,5 +13,5 @@ phases:
   build:
     commands:
       - dotnet restore
-      - dotnet lambda package --configuration release --framework netcoreapp3.0 --output-package bin/release/netcoreapp/deploy-package.zip
+      - dotnet lambda package --configuration release --framework netcoreapp2.1 --output-package bin/release/netcoreapp/deploy-package.zip
       - serverless deploy --stage $target 
