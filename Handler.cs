@@ -9,7 +9,7 @@ namespace AwsDotnetCsharp
 {
   public class Handler
   {
-    public async Task<APIGatewayProxyResponse> FunctionHandler (APIGatewayProxyRequest gatewayProxyRequest, ILambdaContext context)
+    public async Task<APIGatewayProxyResponse> Process (APIGatewayProxyRequest gatewayProxyRequest, ILambdaContext context)
     {
       Console.WriteLine (gatewayProxyRequest);
       return new APIGatewayProxyResponse ();
