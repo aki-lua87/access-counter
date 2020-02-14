@@ -4,7 +4,7 @@ phases:
   install:
     runtime-versions:
       nodejs: 10
-      dotnet: 2.2
+      dotnet: 2.1
     commands:
       - yarn --version
       - yarn global add serverless
