@@ -22,7 +22,7 @@ functions:
   hello:
     handler: CsharpHandlers::AwsDotnetCsharp.Handler::Process
     package:
-      artifact: bin/release/netcoreapp2.1/deploy-package.zip
+      artifact: bin/release/netcoreapp/deploy-package.zip
     events:
       - http:
           method: get
