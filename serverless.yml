@@ -34,7 +34,7 @@ resources:
     AccesCountTable:
       Type: 'AWS::DynamoDB::Table'
       Properties:
-        TableName: ${self:provider.environment.ACCESSCOUNT_DYNAMODB_TABLE}
+        TableName: {self:custom.accessCountTableName}
         AttributeDefinitions:
         - AttributeName: username
           AttributeType: S
