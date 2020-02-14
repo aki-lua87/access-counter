@@ -1,0 +1,50 @@
+service: access-counter
+
+custom:
+  stage: ${opt:stage,"default"} # resource suffix
+  accessCountTableName: AccesCountTable${self:custom.stage}
+
+provider:
+  name: aws
+  runtime: dotnetcore2.1
+  region: ap-northeast-1
+  role: ${env:LAMBDA_IAM}
+  tracing:
+    apiGateway: true
+    lambda: true
+  environment:
+    ACCESSCOUNT_DYNAMODB_TABLE: {self:custom.accessCountTableName}
+
+package:
+  individually: true
+
+functions:
+  hello:
+    handler: CsharpHandlers::AwsDotnetCsharp.Handler::Process
+    package:
+      artifact: bin/release/netcoreapp2.1/deploy-package.zip
+    events:
+      - http:
+          method: get
+          path: counter/{username}/{project}
+          cors: true
+
+resources:
+  Resources:
+    AccesCountTable:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        TableName: ${self:provider.environment.ACCESSCOUNT_DYNAMODB_TABLE}
+        AttributeDefinitions:
+        - AttributeName: username
+          AttributeType: S
+        - AttributeName: project
+          AttributeType: S
+        KeySchema:
+        - AttributeName: username
+          KeyType: HASH
+        - AttributeName: project
+          KeyType: RANGE
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
