@@ -13,7 +13,7 @@ provider:
     apiGateway: true
     lambda: true
   environment:
-    ACCESSCOUNT_DYNAMODB_TABLE: {self:custom.accessCountTableName}
+    ACCESSCOUNT_DYNAMODB_TABLE: ${self:custom.accessCountTableName}
 
 package:
   individually: true
@@ -34,7 +34,7 @@ resources:
     AccesCountTable:
       Type: 'AWS::DynamoDB::Table'
       Properties:
-        TableName: {self:custom.accessCountTableName}
+        TableName: ${self:custom.accessCountTableName}
         AttributeDefinitions:
         - AttributeName: username
           AttributeType: S
