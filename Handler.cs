@@ -26,7 +26,7 @@ namespace AwsDotnetCsharp
       Console.WriteLine ("username:::" + username);
       Console.WriteLine ("project:::" + project);
 
-      var tableName = Environment.GetEnvironmentVariable ("TABLE_NAME");
+      var tableName = Environment.GetEnvironmentVariable ("ACCESSCOUNT_DYNAMODB_TABLE");
 
       var result = PutAccessCount(tableName,username,project);
       Console.WriteLine (JsonConvert.SerializeObject (result));
