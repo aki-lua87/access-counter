@@ -26,7 +26,7 @@ functions:
     events:
       - http:
           method: get
-          path: counter/{username}/{project}
+          path: {username}/{project}/counter.svg
           cors: true
 
 resources:
