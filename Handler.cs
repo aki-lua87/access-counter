@@ -37,7 +37,7 @@ namespace AwsDotnetCsharp
       {
         StatusCode = 200,
           Headers = new Dictionary<string, string> ()
-          { { "expires:", "0" },{ "pragma:", "no-cache" },{ "cache-control", "no-cache, no-store, must-revalidate" }, { "content-type", "image/svg+xml;charset=utf-8" }
+          { { "expires", "0" },{ "pragma", "no-cache" },{ "cache-control", "no-cache, no-store, must-revalidate" }, { "content-type", "image/svg+xml;charset=utf-8" }
           },
           Body = $@"<svg xmlns=""http://www.w3.org/2000/svg"" xmlns:xlink=""http://www.w3.org/1999/xlink"" width=""108"" height=""20""><linearGradient id=""b"" x2=""0"" y2=""100%""><stop offset=""0"" stop-color=""#bbb"" stop-opacity="".1""/><stop offset=""1"" stop-opacity="".1""/></linearGradient><clipPath id=""a""><rect width=""108"" height=""20"" rx=""3"" fill=""#fff""/></clipPath><g clip-path=""url(#a)""><path fill=""#555"" d=""M0 0h71v20H0z""/><path fill=""#007ec6"" d=""M71 0h37v20H71z""/><path fill=""url(#b)"" d=""M0 0h108v20H0z""/></g><g fill=""#fff"" text-anchor=""middle"" font-family=""DejaVu Sans,Verdana,Geneva,sans-serif"" font-size=""110""> <text x=""365"" y=""150"" fill=""#010101"" fill-opacity="".3"" transform=""scale(.1)"" textLength=""610"">totalAccess</text><text x=""365"" y=""140"" transform=""scale(.1)"" textLength=""610"">totalAccess</text><text x=""885"" y=""150"" fill=""#010101"" fill-opacity="".3"" transform=""scale(.1)"" textLength=""270"">{num}</text><text x=""885"" y=""140"" transform=""scale(.1)"" textLength=""270"">{num}</text></g> </svg>"
       };
